@@ -3,8 +3,10 @@ class AppStrings {
   static const String appTagline = 'Premium Laptops Collection';
   
   // Auth
-  static const String login = 'Sign In';
+  static const String singIn = 'Sign In';
   static const String signUp = 'Sign Up';
+  static const String fullName = 'Full Name';
+
   static const String loginTitle = 'Welcome Back';
   static const String loginSubTitle = 'Sign in to your Elwekala Account';
   static const String signUpTitle = 'Create Account';
@@ -13,6 +15,18 @@ class AppStrings {
   static const String forgotPassword = 'Forgot Password?';
   static const String noAccount = "Don't have an account? ";
   static const String haveAccount = "Already have an account? ";
+
+  // Terms 
+  static const String agreeToThe = 'I agree to the ';
+  static const String termsOfService = 'Terms of Service';
+  static const String privacyPolicy = 'Privacy Policy';
+  
+  static const String and = 'and';
+
+
+  // email 
+  static const String  email = 'Email';
+  static const String password = 'Password';
   
   // Products
   static const String laptops = 'Laptops';
@@ -30,4 +44,6 @@ class AppStrings {
   static const String profile = 'Profile';
   static const String editProfile = 'Edit Profile';
   static const String logout = 'Logout';
+
+  
 }

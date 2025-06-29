@@ -23,8 +23,8 @@ class AuthHeader extends StatelessWidget {
         gradient: AppGradients.authHeaderLinearGradient(),
       ),
       child: Center(
-        child: CustomFadeInUp(
-          duration: 400,
+        child: CustomFadeInDown(
+          duration: 800,
           child: Column(
             spacing: 6,
             mainAxisAlignment: MainAxisAlignment.center,

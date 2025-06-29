@@ -1,4 +1,5 @@
 import 'package:elwekala/core/constants/app_routes.dart';
+import 'package:elwekala/core/resources/app_router_transitions.dart';
 import 'package:elwekala/features/auth/presentation/views/login_view.dart';
 import 'package:elwekala/features/auth/presentation/views/sign_up_view.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,10 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.signup,
         name: AppRoutes.signup,
-        builder: (context, state) => const SignUpView(),
+        pageBuilder: (context, state) => slideFromRightTransition(
+          key: state.pageKey,
+          child: const SignUpView(),
+        ),
       ),
 
       GoRoute(
@@ -51,5 +55,24 @@ class AppRouter {
         ],
       ),
     ],
+  );
+}
+
+CustomTransitionPage<T> slideTransitionPage<T>({
+  required Widget child,
+  required LocalKey key,
+}) {
+  return CustomTransitionPage<T>(
+    key: key,
+    child: child,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return SlideTransition(
+        position: Tween<Offset>(
+          begin: const Offset(1.0, 0.0),
+          end: Offset.zero,
+        ).animate(animation),
+        child: child,
+      );
+    },
   );
 }
