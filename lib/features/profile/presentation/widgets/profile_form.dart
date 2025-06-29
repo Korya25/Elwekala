@@ -91,6 +91,7 @@ class SaveButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: const Color(0xFF6366F1).withOpacity(0.3),
             blurRadius: 8,
             offset: const Offset(0, 4),
@@ -148,6 +149,7 @@ class ProfileTextField extends StatelessWidget {
         border: Border.all(color: const Color(0xFF374151)),
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: const Color(0xFF6366F1).withOpacity(0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),

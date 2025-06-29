@@ -42,14 +42,28 @@ class CustomHeaderApp extends StatelessWidget {
       children: [
         icon ?? const Icon(Icons.laptop_mac, size: 80, color: Colors.white),
         const SizedBox(height: 16),
-        Text(title, style: titleStyle ?? Theme.of(context).textTheme.headlineLarge?.copyWith(color: Colors.white)),
+        Text(
+          title,
+          style:
+              titleStyle ??
+              Theme.of(
+                context,
+              ).textTheme.headlineLarge?.copyWith(color: Colors.white),
+        ),
         const SizedBox(height: 8),
-        Text(subTitle, style: subTitleStyle ?? Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white)),
+        Text(
+          subTitle,
+          style:
+              subTitleStyle ??
+              Theme.of(
+                context,
+              ).textTheme.bodyLarge?.copyWith(color: Colors.white),
+        ),
       ],
     );
 
     return Container(
-      height: height ?? 250,
+      height: height ?? 200,
       decoration: BoxDecoration(
         gradient: gradient ?? AppGradients.headerLinearGradient(),
       ),
@@ -57,17 +71,16 @@ class CustomHeaderApp extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              gradient: overlayGradient ?? AppGradients.defaultOverlayGradient(context),
+              gradient:
+                  overlayGradient ??
+                  AppGradients.defaultOverlayGradient(context),
             ),
           ),
           Padding(
             padding: padding ?? EdgeInsets.zero,
             child: Center(
               child: enableAnimation
-                  ? CustomFadeInUp(
-                      duration: animationDuration,
-                      child: content,
-                    )
+                  ? CustomFadeInUp(duration: animationDuration, child: content)
                   : content,
             ),
           ),
@@ -75,6 +88,4 @@ class CustomHeaderApp extends StatelessWidget {
       ),
     );
   }
-
- 
 }

@@ -41,6 +41,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
     setState(() => _isLoading = false);
 
+    // ignore: use_build_context_synchronously
     Navigator.pop(context);
   }
 

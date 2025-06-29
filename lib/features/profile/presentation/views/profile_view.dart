@@ -5,14 +5,28 @@ import 'package:elwekala/features/profile/presentation/widgets/profile_content.d
 import 'package:elwekala/features/profile/presentation/widgets/profile_header.dart';
 import 'package:flutter/material.dart';
 
-class ProfileView extends StatefulWidget {
+class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
   @override
-  State<ProfileView> createState() => _ProfileViewState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        top: false,
+        child: SingleChildScrollView(child: ProfileViewBody()),
+      ),
+    );
+  }
 }
 
-class _ProfileViewState extends State<ProfileView> {
+class ProfileViewBody extends StatefulWidget {
+  const ProfileViewBody({super.key});
+
+  @override
+  State<ProfileViewBody> createState() => _ProfileViewBodyState();
+}
+
+class _ProfileViewBodyState extends State<ProfileViewBody> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
@@ -21,8 +35,8 @@ class _ProfileViewState extends State<ProfileView> {
   bool _isLoading = false;
 
   void _loadUserData() {
-    _nameController.text = "John Doe";
-    _emailController.text = "john.doe@example.com";
+    _nameController.text = "Mahmoud Mohamed ";
+    _emailController.text = "mahmoud@gmail.com";
   }
 
   @override
@@ -49,6 +63,7 @@ class _ProfileViewState extends State<ProfileView> {
       _isEditing = false;
     });
 
+    // ignore: use_build_context_synchronously
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Profile updated successfully!'),
@@ -63,33 +78,27 @@ class _ProfileViewState extends State<ProfileView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              ProfileHeader(
-                name: _nameController.text,
-                email: _emailController.text,
-                isEditing: _isEditing,
-                onEditPressed: _toggleEditMode,
-              ),
-              CustomFadeInLeft(
-                duration: 800,
-                child: ProfileContent(
-                  formKey: _formKey,
-                  isEditing: _isEditing,
-                  nameController: _nameController,
-                  emailController: _emailController,
-                  isLoading: _isLoading,
-                  onSave: _handleSave,
-                ),
-              ),
-              CustomFadeInUp(duration: 800, child: LogoutButton()),
-            ],
+    return Column(
+      children: [
+        ProfileHeader(
+          name: _nameController.text,
+          email: _emailController.text,
+          isEditing: _isEditing,
+          onEditPressed: _toggleEditMode,
+        ),
+        CustomFadeInLeft(
+          duration: 800,
+          child: ProfileContent(
+            formKey: _formKey,
+            isEditing: _isEditing,
+            nameController: _nameController,
+            emailController: _emailController,
+            isLoading: _isLoading,
+            onSave: _handleSave,
           ),
         ),
-      ),
+        CustomFadeInUp(duration: 800, child: LogoutButton()),
+      ],
     );
   }
 }

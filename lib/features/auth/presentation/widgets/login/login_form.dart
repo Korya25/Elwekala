@@ -32,6 +32,7 @@ class _LoginFormState extends State<LoginForm> {
     setState(() => _isLoading = false);
 
     // Navigate
+    // ignore: use_build_context_synchronously
     context.goNamed(AppRoutes.profile);
   }
 

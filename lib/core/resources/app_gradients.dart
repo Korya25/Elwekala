@@ -20,6 +20,7 @@ class AppGradients {
       end: Alignment.bottomCenter,
       colors: [
         Colors.transparent,
+        // ignore: deprecated_member_use
         Theme.of(context).shadowColor.withOpacity(0.1),
       ],
     );

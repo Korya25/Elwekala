@@ -62,6 +62,7 @@ class InfoCard extends StatelessWidget {
         border: Border.all(color: const Color(0xFF374151)),
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: const Color(0xFF6366F1).withOpacity(0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
