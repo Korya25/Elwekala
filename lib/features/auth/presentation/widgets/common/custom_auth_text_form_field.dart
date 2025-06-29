@@ -2,8 +2,8 @@ import 'package:elwekala/core/constants/app_colors.dart';
 import 'package:elwekala/core/resources/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomAuthTextFormField extends StatelessWidget {
-  const CustomAuthTextFormField({
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
     super.key,
     required this.controller,
     required this.label,
@@ -32,7 +32,7 @@ class CustomAuthTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       style: AppTextStyles.button,
       decoration: InputDecoration(
-        fillColor: AppColors.primaryPurple.withAlpha(30),
+        fillColor: AppColors.cardBackground,
         filled: true,
         labelText: label,
         labelStyle: const TextStyle(color: Colors.grey),

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 final appTheme = ThemeData(
   primarySwatch: Colors.purple,
-  scaffoldBackgroundColor: AppColors.primaryPurple.withAlpha(20),
+  scaffoldBackgroundColor: AppColors.backgroundDark,
   textTheme: GoogleFonts.interTextTheme().apply(
     bodyColor: AppColors.textWhite,
     displayColor: AppColors.textWhite,

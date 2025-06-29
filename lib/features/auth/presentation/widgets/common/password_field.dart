@@ -17,7 +17,7 @@ class PasswordField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomAuthTextFormField(
+    return CustomTextFormField(
       controller: passwordController,
       label: AppStrings.password,
       prefixIcon: Icons.lock_outline,

@@ -32,7 +32,7 @@ class _LoginFormState extends State<LoginForm> {
     setState(() => _isLoading = false);
 
     // Navigate
-    context.goNamed(AppRoutes.home);
+    context.goNamed(AppRoutes.profile);
   }
 
   @override
@@ -56,8 +56,10 @@ class _LoginFormState extends State<LoginForm> {
                     setState(() => _isPasswordVisible = !_isPasswordVisible);
                   },
                 ),
+                const SizedBox(height: 0),
+
                 ForgotPasswordButton(),
-                const SizedBox(height: 5),
+                const SizedBox(height: 14),
                 CustomAuthButton(
                   isLoading: _isLoading,
                   onPressed: _handleLogin,

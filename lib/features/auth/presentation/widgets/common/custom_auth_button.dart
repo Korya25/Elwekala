@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:elwekala/core/resources/app_gradients.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +42,7 @@ class CustomAuthButton extends StatelessWidget {
     return Container(
       height: height,
       decoration: BoxDecoration(
-        gradient: AppGradients.authHeaderLinearGradient(),
+        gradient: AppGradients.headerLinearGradient(),
         borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: [
           BoxShadow(

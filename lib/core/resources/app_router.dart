@@ -1,7 +1,7 @@
 import 'package:elwekala/core/constants/app_routes.dart';
-import 'package:elwekala/core/resources/app_router_transitions.dart';
 import 'package:elwekala/features/auth/presentation/views/login_view.dart';
 import 'package:elwekala/features/auth/presentation/views/sign_up_view.dart';
+import 'package:elwekala/features/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,10 +18,7 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.signup,
         name: AppRoutes.signup,
-        pageBuilder: (context, state) => slideFromRightTransition(
-          key: state.pageKey,
-          child: const SignUpView(),
-        ),
+        builder: (context, state) => const SignUpView(),
       ),
 
       GoRoute(
@@ -32,7 +29,7 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.profile,
             name: AppRoutes.profile,
-            builder: (context, state) => const Scaffold(),
+            builder: (context, state) => const ProfileView(),
           ),
 
           GoRoute(

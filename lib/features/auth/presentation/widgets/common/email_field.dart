@@ -10,7 +10,7 @@ class EmailField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomAuthTextFormField(
+    return CustomTextFormField(
       controller: emailController,
       label: AppStrings.email,
       prefixIcon: Icons.email_outlined,

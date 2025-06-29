@@ -3,7 +3,6 @@ import 'package:elwekala/core/constants/app_strings.dart';
 import 'package:elwekala/features/auth/presentation/widgets/common/custom_auth_button.dart';
 import 'package:elwekala/features/auth/presentation/widgets/common/email_field.dart';
 import 'package:elwekala/features/auth/presentation/widgets/common/password_field.dart';
-import 'package:elwekala/features/auth/presentation/widgets/login/forgot_password_button.dart';
 import 'package:elwekala/features/auth/presentation/widgets/signup/full_name_field.dart';
 import 'package:elwekala/features/auth/presentation/widgets/signup/terms_row.dart';
 import 'package:flutter/material.dart';
@@ -68,13 +67,14 @@ class _SignUpFormState extends State<SignUpForm> {
                     setState(() => _isPasswordVisible = !_isPasswordVisible);
                   },
                 ),
-                ForgotPasswordButton(),
+                const SizedBox(height: 16),
+
                 TermsRow(
                   acceptTerms: _acceptTerms,
                   onChangeCheckBox: (value) =>
                       setState(() => _acceptTerms = value ?? false),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 32),
                 CustomAuthButton(
                   isLoading: _isLoading,
                   onPressed: _handleSignUp,

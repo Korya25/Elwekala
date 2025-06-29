@@ -12,7 +12,7 @@ class FullNameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomAuthTextFormField(
+    return CustomTextFormField(
       controller: fullNameController,
       label: AppStrings.fullName,
       prefixIcon: Icons.person,

@@ -1,8 +1,8 @@
 import 'package:elwekala/core/constants/app_routes.dart';
 import 'package:elwekala/core/constants/app_strings.dart';
 import 'package:elwekala/core/widgets/animate_do.dart';
+import 'package:elwekala/core/widgets/custom_header_app.dart';
 import 'package:elwekala/features/auth/presentation/widgets/common/auth_fotter.dart';
-import 'package:elwekala/features/auth/presentation/widgets/common/auth_header.dart';
 import 'package:elwekala/features/auth/presentation/widgets/login/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -30,11 +30,9 @@ class LoginViewBody extends StatelessWidget {
       spacing: 10,
       children: [
         // Auth Header
-        AuthHeader(
-          title: AppStrings.loginTitle,
-          subTitle: AppStrings.loginSubTitle,
-        ),
-
+        CustomHeaderApp(title: AppStrings.loginTitle, 
+        subTitle: AppStrings.loginSubTitle,),
+       
         // Login Form
         CustomFadeInLeft(duration: 800, child: LoginForm()),
 
