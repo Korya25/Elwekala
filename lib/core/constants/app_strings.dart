@@ -45,5 +45,7 @@ class AppStrings {
   static const String editProfile = 'Edit Profile';
   static const String logout = 'Logout';
 
+  static const String searchHomeHint = "Search for laptops, brands, specs...";
+
   
 }

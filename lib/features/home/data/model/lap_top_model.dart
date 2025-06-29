@@ -283,3 +283,73 @@ final List<LaptopModel> laptopsData = [
     "__v": 0,
   },
 ].map((e) => LaptopModel.fromJson(e)).toList();
+  List<LaptopModel> favoriteLaptops = [
+    LaptopModel(
+      id: "64666d3a91c71d884185b774",
+      status: "New",
+      category: "Laptops",
+      name: "Dell XPS 13",
+      price: 30.819,
+      description:
+          "The Dell XPS 13 is a sleek and powerful laptop designed for productivity and portability. It features an 11th Generation Intel Core processor, a 13.3-inch Full HD display, and up to 16GB of RAM, making it a great choice for anyone who needs a reliable laptop on the go.",
+      image:
+          "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434230/hsincqjvphkmfbrcoc2b.png",
+      images: [
+        "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434230/hsincqjvphkmfbrcoc2b.png",
+        "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434232/ks4tuogejkow8dxw2jdw.png",
+        "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434234/rjixaryvwv2pykiolblg.png",
+      ],
+      company: "Dell",
+      countInStock: 8,
+      sales: 9,
+    ),
+    LaptopModel(
+      id: "64666d3a91c71d884185b774",
+      status: "New",
+      category: "Laptops",
+      name: "Dell XPS 13",
+      price: 30.819,
+      description:
+          "The Dell XPS 13 is a sleek and powerful laptop designed for productivity and portability. It features an 11th Generation Intel Core processor, a 13.3-inch Full HD display, and up to 16GB of RAM, making it a great choice for anyone who needs a reliable laptop on the go.",
+      image:
+          "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434230/hsincqjvphkmfbrcoc2b.png",
+      images: [
+        "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434230/hsincqjvphkmfbrcoc2b.png",
+        "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434232/ks4tuogejkow8dxw2jdw.png",
+        "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434234/rjixaryvwv2pykiolblg.png",
+      ],
+      company: "Dell",
+      countInStock: 8,
+      sales: 9,
+    ),
+  ];
+class CartItem {
+  final LaptopModel laptop;
+  int quantity;
+
+  CartItem({required this.laptop, this.quantity = 1});
+}
+
+  List<CartItem> cartItems = [
+    CartItem(
+      laptop: LaptopModel(
+        id: "64666d3a91c71d884185b774",
+        status: "New",
+        category: "Laptops",
+        name: "Dell XPS 13",
+        price: 30.819,
+        description:
+            "The Dell XPS 13 is a sleek and powerful laptop designed for productivity and portability. It features an 11th Generation Intel Core processor, a 13.3-inch Full HD display, and up to 16GB of RAM, making it a great choice for anyone who needs a reliable laptop on the go.",
+        image:
+            "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434230/hsincqjvphkmfbrcoc2b.png",
+        images: [
+          "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434230/hsincqjvphkmfbrcoc2b.png",
+          "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434232/ks4tuogejkow8dxw2jdw.png",
+          "https://res.cloudinary.com/dzh2hde2n/image/upload/v1684434234/rjixaryvwv2pykiolblg.png",
+        ],
+        company: "Dell",
+        countInStock: 8,
+        sales: 9,
+      ),
+    ),
+  ];

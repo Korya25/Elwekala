@@ -63,7 +63,7 @@ class CustomHeaderApp extends StatelessWidget {
     );
 
     return Container(
-      height: height ?? 200,
+      height: height ?? 230,
       decoration: BoxDecoration(
         gradient: gradient ?? AppGradients.headerLinearGradient(),
       ),
