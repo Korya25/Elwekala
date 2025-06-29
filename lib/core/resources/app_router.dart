@@ -1,4 +1,6 @@
-import 'package:elwekala/core/resources/app_routes.dart';
+import 'package:elwekala/core/constants/app_routes.dart';
+import 'package:elwekala/features/auth/presentation/views/login_view.dart';
+import 'package:elwekala/features/auth/presentation/views/sign_up_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,13 +11,13 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.login,
         name: AppRoutes.login,
-        builder: (context, state) => Scaffold(),
+        builder: (context, state) => LoginView(),
       ),
 
       GoRoute(
         path: AppRoutes.signup,
         name: AppRoutes.signup,
-        builder: (context, state) => const Scaffold(),
+        builder: (context, state) => const SignUpView(),
       ),
 
       GoRoute(

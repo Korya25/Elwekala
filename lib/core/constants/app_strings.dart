@@ -5,8 +5,11 @@ class AppStrings {
   // Auth
   static const String login = 'Sign In';
   static const String signUp = 'Sign Up';
-  static const String welcomeBack = 'Welcome Back';
-  static const String createAccount = 'Create Account';
+  static const String loginTitle = 'Welcome Back';
+  static const String loginSubTitle = 'Sign in to your Elwekala Account';
+  static const String signUpTitle = 'Create Account';
+  static const String signUpSubTitle = 'Join the Elwekala Family';
+  
   static const String forgotPassword = 'Forgot Password?';
   static const String noAccount = "Don't have an account? ";
   static const String haveAccount = "Already have an account? ";

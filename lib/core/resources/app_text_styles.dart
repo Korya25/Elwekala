@@ -7,6 +7,7 @@ class AppTextStyles {
     fontSize: 32,
     fontWeight: FontWeight.bold,
     color: AppColors.textWhite,
+    letterSpacing: 1.2,
   );
 
   static TextStyle headlineMedium = GoogleFonts.inter(
