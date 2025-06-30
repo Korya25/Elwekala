@@ -1,5 +1,6 @@
 import 'package:elwekala/features/home/data/model/lap_top_model.dart';
 import 'package:flutter/material.dart';
+/*
 class LaptopDetailView extends StatefulWidget {
   final LaptopModel laptop;
 
@@ -957,7 +958,7 @@ class _LaptopDetailViewState extends State<LaptopDetailView>
     );
   }
 }
-
+*/
 
 class CartScreen extends StatefulWidget {
   final List<CartItem> cartItems;

@@ -1,15 +1,20 @@
 import 'package:elwekala/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+class ResualtEader extends StatelessWidget {
+  final int count;
+  final String searchQuery;
+  final String selectedCategory;
+  final VoidCallback onClearFilters;
+  final TextEditingController searchController;
 
-class ResualtEader extends StatefulWidget {
-  const ResualtEader({super.key});
-  @override
-  State<ResualtEader> createState() => _ResualtEaderState();
-}
-
-class _ResualtEaderState extends State<ResualtEader> {
-    String selectedCategory = "All";
-  String searchQuery = "";
+  const ResualtEader({
+    super.key,
+    required this.count,
+    required this.searchQuery,
+    required this.selectedCategory,
+    required this.onClearFilters,
+    required this.searchController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,31 +25,14 @@ class _ResualtEaderState extends State<ResualtEader> {
           children: [
             Text(
               "Found $count laptop${count != 1 ? 's' : ''}",
-              style: TextStyle(
-                color: Colors.grey[400],
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-              ),
+              style: TextStyle(color: Colors.grey[400], fontSize: 14),
             ),
             const Spacer(),
             if (searchQuery.isNotEmpty || selectedCategory != "All")
               TextButton.icon(
-                onPressed: () {
-                  setState(() {
-                    selectedCategory = "All";
-                    searchQuery = "";
-                    _searchController.clear();
-                  });
-                },
-                icon: const Icon(
-                  Icons.clear_all,
-                  size: 16,
-                  color: AppColors.primaryPurple,
-                ),
-                label: const Text(
-                  "Clear filters",
-                  style: TextStyle(color: AppColors.primaryPurple, fontSize: 12),
-                ),
+                onPressed: onClearFilters,
+                icon: const Icon(Icons.clear_all, size: 16, color: AppColors.primaryPurple),
+                label: const Text("Clear filters", style: TextStyle(color: AppColors.primaryPurple, fontSize: 12)),
               ),
           ],
         ),

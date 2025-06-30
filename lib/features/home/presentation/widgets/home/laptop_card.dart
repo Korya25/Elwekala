@@ -114,6 +114,7 @@ class LaptopCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: (isNew ? AppColors.successGreen : AppColors.primaryYellow)
+                // ignore: deprecated_member_use
                 .withOpacity(0.3),
             blurRadius: 4,
             offset: const Offset(0, 2),
@@ -135,6 +136,7 @@ class LaptopCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
+        // ignore: deprecated_member_use
         color: Colors.black.withOpacity(0.7),
         borderRadius: BorderRadius.circular(8),
       ),

@@ -9,7 +9,7 @@ class LaptopListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     if (laptops.isEmpty) {
       return SliverToBoxAdapter(
-        child: Container(
+        child: SizedBox(
           height: 300,
           child: Center(
             child: Column(

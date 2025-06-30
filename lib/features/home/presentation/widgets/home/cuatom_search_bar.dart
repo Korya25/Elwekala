@@ -1,35 +1,15 @@
 import 'package:elwekala/core/constants/app_colors.dart';
 import 'package:elwekala/core/constants/app_strings.dart';
 import 'package:flutter/material.dart';
+class CuatomSearchBar extends StatelessWidget {
+  final TextEditingController controller;
+  final ValueChanged<String> onChanged;
 
-class CuatomSearchBar extends StatefulWidget {
-  const CuatomSearchBar({super.key});
-
-  @override
-  State<CuatomSearchBar> createState() => _CuatomSearchBarState();
-}
-
-class _CuatomSearchBarState extends State<CuatomSearchBar> {
-  late TextEditingController _searchController;
-  String searchQuery = "";
-
-  @override
-  void initState() {
-    super.initState();
-    _searchController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
-
-  void _onSearchChanged(String query) {
-    setState(() {
-      searchQuery = query;
-    });
-  }
+  const CuatomSearchBar({
+    super.key,
+    required this.controller,
+    required this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +20,7 @@ class _CuatomSearchBarState extends State<CuatomSearchBar> {
           decoration: BoxDecoration(
             color: AppColors.cardBackground,
             borderRadius: BorderRadius.circular(25),
-            border: Border.all(color: AppColors.primaryPurple, width: 1),
+            border: Border.all(color: AppColors.primaryPurple),
             boxShadow: [
               BoxShadow(
                 color: AppColors.primaryPurple.withOpacity(0.1),
@@ -50,30 +30,24 @@ class _CuatomSearchBarState extends State<CuatomSearchBar> {
             ],
           ),
           child: TextField(
-            controller: _searchController,
-            onChanged: _onSearchChanged,
+            controller: controller,
+            onChanged: onChanged,
             style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(
               hintText: AppStrings.searchHomeHint,
               hintStyle: TextStyle(color: Colors.grey[400]),
-              prefixIcon: const Icon(
-                Icons.search,
-                color: AppColors.primaryPurple,
-              ),
-              suffixIcon: searchQuery.isNotEmpty
+              prefixIcon: const Icon(Icons.search, color: AppColors.primaryPurple),
+              suffixIcon: controller.text.isNotEmpty
                   ? IconButton(
                       icon: const Icon(Icons.clear, color: Colors.grey),
                       onPressed: () {
-                        _searchController.clear();
-                        _onSearchChanged("");
+                        controller.clear();
+                        onChanged('');
                       },
                     )
                   : null,
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 15,
-              ),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             ),
           ),
         ),
