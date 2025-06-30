@@ -2,8 +2,8 @@ import 'package:elwekala/core/constants/app_routes.dart';
 import 'package:elwekala/features/auth/presentation/views/login_view.dart';
 import 'package:elwekala/features/auth/presentation/views/sign_up_view.dart';
 import 'package:elwekala/features/cart/presentation/views/cart_screen.dart';
+import 'package:elwekala/features/favorite/presentation/views/favorite_view.dart';
 import 'package:elwekala/features/home/data/model/lap_top_model.dart';
-import 'package:elwekala/features/home/presentation/views/favorite_cart_screen.dart';
 import 'package:elwekala/features/home/presentation/views/home_view.dart';
 import 'package:elwekala/features/home/presentation/views/laptop_detail_view.dart';
 import 'package:elwekala/features/profile/presentation/views/profile_view.dart';
@@ -41,7 +41,7 @@ class AppRouter {
             path: AppRoutes.favorite,
             name: AppRoutes.favorite,
 
-            builder: (context, state) => FavoritesScreen(
+            builder: (context, state) => FavoriteView(
               favoriteLaptops: favoriteLaptops,
               onRemoveFromFavorites: (laptop) {
                 //    setState(() {
